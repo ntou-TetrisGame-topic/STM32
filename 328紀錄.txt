@@ -1,0 +1,15 @@
+按鍵觸發觸發測試正常
+順便把弄壞的LED燈，透過焊接更換修復(22)
+
+
+待解決問題:
+ledmap改mallcat
+
+待實作feat:
+測試將系統訊息輸出
+輸出分數
+透過esp32觸發uart中斷
+
+
+LED開機、分數輸出暫時關閉
+baud rate 調整為FPGA mode

@@ -1,0 +1,11 @@
+改heap size
+確認input
+
+待解決問題:
+input區有些bug，有些地方輸出會衝突
+ledmap改mallcat
+按鈕input實作
+測試界外情況、測試消一排
+
+LED、分數輸出暫時關閉
+baud rate 調整為debug mode

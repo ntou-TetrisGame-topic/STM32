@@ -1,0 +1,10 @@
+新增exti、key準備測試按鍵觸發
+
+
+待解決問題:
+ledmap改mallcat
+測試界外情況、測試消一排
+想想能不能再不碰燈板的情況測試
+
+LED、分數輸出暫時關閉
+baud rate 調整為debug mode
