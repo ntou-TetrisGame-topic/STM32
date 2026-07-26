@@ -2,8 +2,8 @@
 ..\obj\tetris.o: tetris.h
 ..\obj\tetris.o: game.h
 ..\obj\tetris.o: grid.h
-..\obj\tetris.o: C:\Users\88691\AppData\Local\Keil_v5\ARM\arm_compiler_506\Bin\..\include\stdint.h
-..\obj\tetris.o: C:\Users\88691\AppData\Local\Keil_v5\ARM\arm_compiler_506\Bin\..\include\stdbool.h
+..\obj\tetris.o: C:\Users\t0910\AppData\Local\Keil_v5\ARM\ARMCompiler506\Bin\..\include\stdint.h
+..\obj\tetris.o: C:\Users\t0910\AppData\Local\Keil_v5\ARM\ARMCompiler506\Bin\..\include\stdbool.h
 ..\obj\tetris.o: block.h
 ..\obj\tetris.o: position.h
 ..\obj\tetris.o: ..\SYSTEM\sys\sys.h
@@ -44,9 +44,9 @@
 ..\obj\tetris.o: detectKey.h
 ..\obj\tetris.o: color.h
 ..\obj\tetris.o: ..\SYSTEM\usart\usart.h
-..\obj\tetris.o: C:\Users\88691\AppData\Local\Keil_v5\ARM\arm_compiler_506\Bin\..\include\stdio.h
-..\obj\tetris.o: C:\Users\88691\AppData\Local\Keil_v5\ARM\arm_compiler_506\Bin\..\include\time.h
+..\obj\tetris.o: C:\Users\t0910\AppData\Local\Keil_v5\ARM\ARMCompiler506\Bin\..\include\stdio.h
+..\obj\tetris.o: C:\Users\t0910\AppData\Local\Keil_v5\ARM\ARMCompiler506\Bin\..\include\time.h
 ..\obj\tetris.o: ..\HARDWARE\BEEP\beep.h
 ..\obj\tetris.o: ..\HARDWARE\KEY\key.h
 ..\obj\tetris.o: ..\HARDWARE\EXTI\exti.h
-..\obj\tetris.o: C:\Users\88691\AppData\Local\Keil_v5\ARM\arm_compiler_506\Bin\..\include\stdlib.h
+..\obj\tetris.o: C:\Users\t0910\AppData\Local\Keil_v5\ARM\ARMCompiler506\Bin\..\include\stdlib.h

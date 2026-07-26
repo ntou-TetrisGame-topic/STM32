@@ -13,8 +13,8 @@ extern "C" {
 
 typedef struct Grid {
     // public
-    int **grid;
-    int **nextBlockGrid;
+    uint32_t ** grid;
+    uint32_t ** nextBlockGrid;
 
     // private
     int numRows;

@@ -1,10 +1,10 @@
 ..\obj\block.o: block.c
 ..\obj\block.o: block.h
-..\obj\block.o: C:\Users\88691\AppData\Local\Keil_v5\ARM\arm_compiler_506\Bin\..\include\stdint.h
+..\obj\block.o: C:\Users\t0910\AppData\Local\Keil_v5\ARM\ARMCompiler506\Bin\..\include\stdint.h
 ..\obj\block.o: position.h
 ..\obj\block.o: grid.h
-..\obj\block.o: C:\Users\88691\AppData\Local\Keil_v5\ARM\arm_compiler_506\Bin\..\include\stdbool.h
+..\obj\block.o: C:\Users\t0910\AppData\Local\Keil_v5\ARM\ARMCompiler506\Bin\..\include\stdbool.h
 ..\obj\block.o: color.h
 ..\obj\block.o: tetris.h
 ..\obj\block.o: game.h
-..\obj\block.o: C:\Users\88691\AppData\Local\Keil_v5\ARM\arm_compiler_506\Bin\..\include\stdlib.h
+..\obj\block.o: C:\Users\t0910\AppData\Local\Keil_v5\ARM\ARMCompiler506\Bin\..\include\stdlib.h
