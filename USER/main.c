@@ -8,6 +8,7 @@
 #include "key.h"
 #include "exti.h"
 #include "grid.h"
+#include "fsmc.h"
 #include <stdbool.h>
 
 /*
@@ -41,7 +42,7 @@ void ESP32_SendGameData(u8 next_block[16], u8 add_score, u8 reset)
     buf[19] = '\n';
     buf[20] = '\0';
 
-    USART_SendString(USART2, buf);
+    USART_SendString(USART1, buf);
 }
 
 
@@ -54,15 +55,21 @@ int main(void)
 {
 	int tetrisScore;
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
-	delay_init(168);
-	uart_init(2500000); // FPGA mode
+	//delay_init(168);
+	uart_init(115200); // FPGA mode
+	
 	uart2_init(115200);
 	//uart_init(115200); // debug mode
 	EXTIX_Init();       //初始化外部中斷輸入 
 
 	LED_Init();
 	// timer 3 interrupt
-	TIM3_Int_Init(3000 - 1, 8400 - 1);
+	TIM3_Int_Init(1500 - 1, 8400 - 1);
+	FSMC_SRAM_Init();
+	
+	*(__IO uint8_t *)(0x60000000) = 0xFF; // G
+	*(__IO uint8_t *)(0x60000001) = 0xFF; // R
+	*(__IO uint8_t *)(0x60000002) = 0xFF; // B
 	
 	while (true)
 	{

@@ -2,7 +2,7 @@
 ..\obj\usart.o: ..\SYSTEM\sys\sys.h
 ..\obj\usart.o: ..\USER\stm32f4xx.h
 ..\obj\usart.o: ..\CORE\core_cm4.h
-..\obj\usart.o: C:\Users\88691\AppData\Local\Keil_v5\ARM\arm_compiler_506\Bin\..\include\stdint.h
+..\obj\usart.o: C:\Users\t0910\AppData\Local\Keil_v5\ARM\ARMCompiler506\Bin\..\include\stdint.h
 ..\obj\usart.o: ..\CORE\core_cmInstr.h
 ..\obj\usart.o: ..\CORE\core_cmFunc.h
 ..\obj\usart.o: ..\CORE\core_cm4_simd.h
@@ -36,6 +36,6 @@
 ..\obj\usart.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\usart.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
 ..\obj\usart.o: ..\SYSTEM\usart\usart.h
-..\obj\usart.o: C:\Users\88691\AppData\Local\Keil_v5\ARM\arm_compiler_506\Bin\..\include\stdio.h
+..\obj\usart.o: C:\Users\t0910\AppData\Local\Keil_v5\ARM\ARMCompiler506\Bin\..\include\stdio.h
 ..\obj\usart.o: ..\HARDWARE\EXTI\exti.h
-..\obj\usart.o: C:\Users\88691\AppData\Local\Keil_v5\ARM\arm_compiler_506\Bin\..\include\stdbool.h
+..\obj\usart.o: C:\Users\t0910\AppData\Local\Keil_v5\ARM\ARMCompiler506\Bin\..\include\stdbool.h

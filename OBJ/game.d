@@ -1,9 +1,9 @@
 ..\obj\game.o: game.c
 ..\obj\game.o: detectKey.h
-..\obj\game.o: C:\Users\88691\AppData\Local\Keil_v5\ARM\arm_compiler_506\Bin\..\include\stdint.h
+..\obj\game.o: C:\Users\t0910\AppData\Local\Keil_v5\ARM\ARMCompiler506\Bin\..\include\stdint.h
 ..\obj\game.o: game.h
 ..\obj\game.o: grid.h
-..\obj\game.o: C:\Users\88691\AppData\Local\Keil_v5\ARM\arm_compiler_506\Bin\..\include\stdbool.h
+..\obj\game.o: C:\Users\t0910\AppData\Local\Keil_v5\ARM\ARMCompiler506\Bin\..\include\stdbool.h
 ..\obj\game.o: block.h
 ..\obj\game.o: position.h
-..\obj\game.o: C:\Users\88691\AppData\Local\Keil_v5\ARM\arm_compiler_506\Bin\..\include\stdlib.h
+..\obj\game.o: C:\Users\t0910\AppData\Local\Keil_v5\ARM\ARMCompiler506\Bin\..\include\stdlib.h

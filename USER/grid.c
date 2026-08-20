@@ -1,6 +1,7 @@
 #include "grid.h"
 #include "color.h"
 #include "display.h"
+#include "fsmc.h"
 
 #include <stdlib.h>
 
@@ -78,59 +79,52 @@ void gridDestory(Grid *g)
     free(g);
 }
 
-// grid.c 裡面的 gridPrint
+// grid.c 裡的 gridPrint
 void gridPrint(Grid *g)
 {
-    int i, j, next_block_offset_col, idx, logic_j;
+    int i, j;
     uint32_t color;
-    uint8_t r, g_color, b; /// 使用 g_color 避免和 Grid *g 變數名搞混
+    uint8_t r, g_color, b;
+    uint16_t led_index;
+
+    const int COLS_PER_ROW = 16;
 
     for (i = 0; i < g->numRows; i++)
     {
         for (j = 0; j < g->numCols; j++)
         {
-            // 優化：決定我們要從 grid 的哪一列拿資料
-            logic_j = (i % 2 == 0) ? j : (g->numCols - 1 - j);
-
-            if (i < 4 && logic_j < 16 && logic_j > 11) {
-                color = g->nextBlockGrid[i][logic_j - 12];
-            }else {
-                color = g->grid[i][logic_j];
+            // 1. 直接按正常陣列順序 (左到右) 取用顏色，不需處理 logic_j
+            if (i < 4 && j >= 12 && j < 16)
+            {
+                color = g->nextBlockGrid[i][j - 12];
+            }
+            else
+            {
+                color = g->grid[i][j];
             }
 
-             // 提取顏色 (ARGB -> RGB)
-            r = ((color >> 16) & 0xFF)/4;
-            g_color = ((color >> 8) & 0xFF)/4;
-            b = (color & 0xFF)/4;
+            // 2. 提取 ARGB -> RGB (調整亮度)
+            r = ((color >> 16) & 0xFF) / 4;
+            g_color = ((color >> 8) & 0xFF) / 4;
+            b = (color & 0xFF) / 4;
 
-            // 這裡的 j 永遠是 0 -> numCols-1 (物理掃描順序)
-            write_to_map(LED_MAP, i, j, r, g_color, b);
+            // 3. 計算物理燈珠的蛇形位址 (Serpentine Layout)
+            // 偶數列 (0, 2, 4...): 正向 (0 -> 15)
+            // 奇數列 (1, 3, 5...): 反向 (15 -> 0)
+            if (i % 2 == 0)
+            {
+                led_index = (i * COLS_PER_ROW) + j;
+            }
+            else
+            {
+                led_index = (i * COLS_PER_ROW) + (COLS_PER_ROW - 1 - j);
+            }
+
+            // 4. 寫入 FSMC 記憶體
+            LED_RAM[led_index].g = g_color;
+            LED_RAM[led_index].r = r;
+            LED_RAM[led_index].b = b;
         }
-    }
-
-    // 繪製 Next Block (放在主遊戲區右側，這裡假設主區寬度 < 12，往右偏移)
-    // next_block_offset_col = g->numCols + 2; // 中間空兩格
-    // for (i = 0; i < 4; i++)
-    // {
-    //     for (j = 0; j < 4; j++)
-    //     {
-    //         color = g->nextBlockGrid[i][j];
-
-    //         r =       (color >> 16) & 0xFF;
-    //         g_color = (color >> 8)  & 0xFF;
-    //         b =        color        & 0xFF;
-
-    //         // r /= 4; g_color /= 4; b /= 4;
-
-    //         // 寫入 LED_MAP，行數(i)可加上偏移量讓它往下放，列數(j)加上 offset 往右放
-    //         write_to_map(LED_MAP, i + 2, j + next_block_offset_col, r, g_color, b);
-    //     }
-    // }
-
-    // 將整張更新後的 LED_MAP 送出到 FPGA  
-	for (i = 0; i < 32; i++)
-    {
-        send_led_chunk(i, 16, LED_MAP);
     }
 }
 
