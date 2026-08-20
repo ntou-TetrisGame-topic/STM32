@@ -27,11 +27,18 @@ Project File Date:  07/25/2026
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 for Certification (build 960)', folder: 'C:\Users\t0910\AppData\Local\Keil_v5\ARM\ARMCompiler506\Bin'
 Build target 'TIMER'
-compiling fsmc.c...
+compiling main.c...
+main.c(61): warning:  #223-D: function "uart2_init" declared implicitly
+  	uart2_init(115200);
+main.c(76): warning:  #223-D: function "tetris" declared implicitly
+  		tetrisScore = tetris();
+main.c(56): warning:  #550-D: variable "tetrisScore"  was set but never used
+  	int tetrisScore;
+main.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=16536 RO-data=452 RW-data=100 ZI-data=103628  
+Program Size: Code=16528 RO-data=452 RW-data=100 ZI-data=103628  
 FromELF: creating hex file...
-"..\OBJ\TIMER.axf" - 0 Error(s), 0 Warning(s).
+"..\OBJ\TIMER.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
